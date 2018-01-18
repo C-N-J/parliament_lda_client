@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://lda.data.parliament.uk/resources/143468.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - lda.data.parliament.uk
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Jan 2018 14:33:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9e36c32f43e100a8bc93e0da04ac5d5d1516717997; expires=Wed, 23-Jan-19
+        14:33:17 GMT; path=/; domain=.parliament.uk; HttpOnly
+      X-Response-Id:
+      - '49807'
+      Access-Control-Allow-Origin:
+      - "*"
+      Expires:
+      - Tue, 23 Jan 2018 14:49:57 GMT
+      Etag:
+      - W/"fe66d69d3da023ee"
+      Content-Location:
+      - http://lda.data.parliament.uk/resources/143468.json
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3e1b779ec16535e4-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        { "format" : "linked-data-api", "version" : "0.2", "result" : {"_about" : "http://lda.data.parliament.uk/resources/143468.json", "definition" : "http://lda.data.parliament.uk/meta/resources/_id.json", "extendedMetadataVersion" : "http://lda.data.parliament.uk/resources/143468.json?_metadata=all", "primaryTopic" : {"_about" : "http://data.parliament.uk/resources/143468", "constituencyType" : "Borough", "ddpCreated" : {"_value" : "2014-11-07T19:29:01.853Z", "_datatype" : "dateTime"}
+              , "ddpModified" : {"_value" : "2014-11-07T19:29:01.853Z", "_datatype" : "dateTime"}
+              , "endedDate" : {"_value" : "2005-05-05", "_datatype" : "dateTime"}
+              , "gssCode" : "", "humanIndexable" : {"_value" : "false", "_datatype" : "boolean"}
+              , "isPrimaryTopicOf" : "http://lda.data.parliament.uk/resources/143468.json", "label" : {"_value" : "Aberdeen Central"}
+              , "osName" : "Aberdeen Central Burgh Const", "prefLabel" : {"_value" : "Aberdeen Central"}
+              , "previousConstituency" : "1997-570", "published" : {"_value" : "true", "_datatype" : "boolean"}
+              , "sameAs" : ["http://statistics.data.gov.uk/id/statistical-geography/"], "startedDate" : {"_value" : "1997-05-01", "_datatype" : "dateTime"}
+              , "type" : "http://data.ordnancesurvey.co.uk/ontology/admingeo/WestminsterConstituency"}
+            , "type" : ["http://purl.org/linked-data/api/vocab#ItemEndpoint", "http://purl.org/linked-data/api/vocab#Page"]}
+        }
+    http_version: 
+  recorded_at: Tue, 23 Jan 2018 14:34:05 GMT
+recorded_with: VCR 4.0.0
