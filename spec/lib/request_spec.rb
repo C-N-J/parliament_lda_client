@@ -92,14 +92,6 @@ RSpec.describe ParliamentLdaWrapper::Request do
           end
         end
       end
-
-      context 'ID does not exist' do
-        let(:ids){ ['abc'] }
-        it 'is a pending example: will not return a result'
-          #VCR.use_cassette('request/get_by_ids/invalid_ids/id_does_not_exist') 
-          #end
-        #end
-      end
     end
   end
 
@@ -111,9 +103,35 @@ RSpec.describe ParliamentLdaWrapper::Request do
         end
       end
     end
+  end
 
-    context 'invalid request' do
-      it 'will return the correct exception'
+  context '#handle_errors' do
+    # The required response codes have been added to the VCR cassettes to mock each scenario.
+    let(:url){ 'www.example.com' }
+    let(:response){ described_class.new(url).make_request(url) }
+
+    context 'success' do
+      it 'will not raise an error' do
+        VCR.use_cassette('request/handle_errors/success/will_not_raise_error') do
+          expect{ request_instance.handle_errors(response) }.to_not raise_error(StandardError)
+        end
+      end
+    end
+
+    context 'server error' do
+      it 'will not raise an error' do
+        VCR.use_cassette('request/handle_errors/server_error/will_raise_error') do
+          expect{ request_instance.handle_errors(response) }.to raise_error(StandardError, '500 HTTP status code recieved from http://lda.data.parliament.uk:80/www.example.com.json - Server Error')
+        end
+      end
+    end
+
+    context 'client error' do
+      it 'will not raise an error' do
+        VCR.use_cassette('request/handle_errors/client_error/will_raise_error') do
+          expect{ request_instance.handle_errors(response) }.to raise_error(StandardError, '400 HTTP status code recieved from http://lda.data.parliament.uk:80/www.example.com.json - Client Error')
+        end
+      end
     end
   end
 end

@@ -17,11 +17,15 @@ module ParliamentLdaWrapper
       response_hash = { 'result' => { 'items' => [] } }
 
       loop do
-        response = Helpers::ResponseHelper.convert_to_json(make_request(@endpoint, options).body)
+        response = make_request(@endpoint, options)
 
-        break if response['result']['items'].count.zero?
+        handle_errors(response)
 
-        response_hash['result']['items'] += response['result']['items']
+        response_body = Helpers::ResponseHelper.convert_to_json(response.body)
+
+        break if response_body['result']['items'].count.zero?
+
+        response_hash['result']['items'] += response_body['result']['items']
         options['_page'] += 1
       end
 
@@ -31,13 +35,13 @@ module ParliamentLdaWrapper
     def get_by_ids(ids)
       raise ArgumentError.new('IDs cannot be nil or empty.') if ids.nil? or ids.empty?
 
-      items = []
-      ids.each do |id|
-        response = Helpers::ResponseHelper.convert_to_json(make_request("resources/#{id}").body)
-        items << response['result']['primaryTopic']
-      end
+      ids.map do |id|
+        response = make_request("resources/#{id}")
+        handle_errors(response)
 
-      items
+        response_body = Helpers::ResponseHelper.convert_to_json(response.body)
+        response_body['result']['primaryTopic']
+      end
     end
 
     def make_request(endpoint, options={})
@@ -45,6 +49,12 @@ module ParliamentLdaWrapper
         Helpers::RequestHelper.full_uri(endpoint),
         params: options
       ).run
+    end
+
+    def handle_errors(response)
+      if response.failure? || response.timed_out?
+        raise StandardError.new("#{response.code} HTTP status code recieved from #{response.effective_url.to_s} - #{response.status_message}")
+      end
     end
   end
 end
