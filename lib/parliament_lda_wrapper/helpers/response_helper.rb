@@ -1,4 +1,5 @@
 require_relative 'date_helper'
+require 'json'
 
 module ParliamentLdaWrapper
   module Helpers
