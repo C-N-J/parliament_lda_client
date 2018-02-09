@@ -4,8 +4,8 @@ module ParliamentLdaWrapper
   module Helpers
     module RequestHelper
       class << self
-        def full_uri(endpoint, options)
-          URI("#{Request::BASE_URL + endpoint + Request::DATA_FORMAT}?#{URI.encode_www_form(options) if options.any?}")
+        def full_uri(endpoint)
+          URI("#{Request::BASE_URL + endpoint + Request::DATA_FORMAT}")
         end
       end
     end

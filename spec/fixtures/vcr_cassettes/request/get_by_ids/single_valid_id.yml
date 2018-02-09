@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://lda.data.parliament.uk/resources/143468.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Feb 2018 11:42:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d326fd52920aaed0293fadb5c96aaa7501518176540; expires=Sat, 09-Feb-19
+        11:42:20 GMT; path=/; domain=.parliament.uk; HttpOnly
+      Content-Location:
+      - http://eldaddp.azurewebsites.net/resources/143468.json
+      Expires:
+      - Fri, 09 Feb 2018 15:42:20 GMT
+      Etag:
+      - W/"715a0b494b76430e"
+      Vary:
+      - Accept-Encoding
+      X-Response-Id:
+      - '129377'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Powered-By:
+      - ASP.NET
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '1167'
+      Cache-Control:
+      - public, max-age=14400
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 3ea6908fe6c40ccb-LHR
+    body:
+      encoding: UTF-8
+      string: |
+        { "format" : "linked-data-api", "version" : "0.2", "result" : {"_about" : "http://eldaddp.azurewebsites.net/resources/143468.json", "definition" : "http://eldaddp.azurewebsites.net/meta/resources/_id.json", "extendedMetadataVersion" : "http://eldaddp.azurewebsites.net/resources/143468.json?_metadata=all", "primaryTopic" : {"_about" : "http://data.parliament.uk/resources/143468", "constituencyType" : "Borough", "ddpCreated" : {"_value" : "2014-11-07T19:29:01.853Z", "_datatype" : "dateTime"}
+              , "ddpModified" : {"_value" : "2014-11-07T19:29:01.853Z", "_datatype" : "dateTime"}
+              , "endedDate" : {"_value" : "2005-05-05", "_datatype" : "dateTime"}
+              , "gssCode" : "", "humanIndexable" : {"_value" : "false", "_datatype" : "boolean"}
+              , "isPrimaryTopicOf" : "http://eldaddp.azurewebsites.net/resources/143468.json", "label" : {"_value" : "Aberdeen Central"}
+              , "osName" : "Aberdeen Central Burgh Const", "prefLabel" : {"_value" : "Aberdeen Central"}
+              , "previousConstituency" : "1997-570", "published" : {"_value" : "true", "_datatype" : "boolean"}
+              , "sameAs" : ["http://statistics.data.gov.uk/id/statistical-geography/"], "startedDate" : {"_value" : "1997-05-01", "_datatype" : "dateTime"}
+              , "type" : "http://data.ordnancesurvey.co.uk/ontology/admingeo/WestminsterConstituency"}
+            , "type" : ["http://purl.org/linked-data/api/vocab#ItemEndpoint", "http://purl.org/linked-data/api/vocab#Page"]}
+        }
+    http_version: 
+  recorded_at: Fri, 09 Feb 2018 11:42:40 GMT
+recorded_with: VCR 4.0.0

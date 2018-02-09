@@ -1,4 +1,3 @@
-require 'net/http'
 require_relative 'helpers/response_helper'
 require_relative 'helpers/request_helper'
 
@@ -12,7 +11,7 @@ module ParliamentLdaWrapper
       @endpoint = endpoint
     end
 
-    def get_data(options={})
+    def get(options={})
       options = DEFAULT_OPTIONS.merge(options)
 
       response_hash = { 'result' => { 'items' => [] } }
@@ -29,7 +28,7 @@ module ParliamentLdaWrapper
       response_hash
     end
 
-    def get_data_by_ids(ids)
+    def get_by_ids(ids)
       raise ArgumentError.new('IDs cannot be nil or empty.') if ids.nil? or ids.empty?
 
       items = []
@@ -42,7 +41,10 @@ module ParliamentLdaWrapper
     end
 
     def make_request(endpoint, options={})
-      Net::HTTP.get_response(Helpers::RequestHelper.full_uri(endpoint, options))
+      Typhoeus::Request.new(
+        Helpers::RequestHelper.full_uri(endpoint),
+        params: options
+      ).run
     end
   end
 end
