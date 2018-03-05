@@ -1,5 +1,6 @@
 require_relative 'helpers/response_helper'
 require_relative 'helpers/request_helper'
+require 'typhoeus'
 
 module ParliamentLdaWrapper
   class Request
