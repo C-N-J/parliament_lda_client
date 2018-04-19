@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ParliamentLdaWrapper::Request do
+RSpec.describe ParliamentLdaClient::Request do
   let(:endpoint_string) { 'researchbriefings' }
   let(:request_instance){ described_class.new(endpoint_string) }
   let(:options)                   { {'min-date': '2017-01-01', 'max-date': '2017-12-31'} }

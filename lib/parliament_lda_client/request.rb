@@ -2,7 +2,7 @@ require_relative 'helpers/response_helper'
 require_relative 'helpers/request_helper'
 require 'typhoeus'
 
-module ParliamentLdaWrapper
+module ParliamentLdaClient
   class Request
     BASE_URL        = 'http://lda.data.parliament.uk/'.freeze
     DATA_FORMAT     = '.json'.freeze

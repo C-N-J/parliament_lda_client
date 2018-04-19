@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "parliament_lda_wrapper/version"
+require "parliament_lda_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "parliament_lda_wrapper"
-  spec.version       = ParliamentLdaWrapper::VERSION
+  spec.name          = "parliament_lda_client"
+  spec.version       = ParliamentLdaClient::VERSION
   spec.authors       = ["Callum Neve-Jones"]
   spec.email         = ["c.nevejones@gmail.com"]
 
-  spec.summary       = %q{A simple wrapper for the UK Parliament linked data API.}
-  spec.description   = %q{A simple wrapper for the UK Parliament linked data API.}
-  spec.homepage      = "https://github.com/C-N-J/parliament_lda_wrapper"
+  spec.summary       = %q{A simple client for the UK Parliament linked data API.}
+  spec.description   = %q{A simple client for the UK Parliament linked data API.}
+  spec.homepage      = "https://github.com/C-N-J/parliament_lda_client"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

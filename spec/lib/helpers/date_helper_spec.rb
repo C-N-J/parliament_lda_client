@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe ParliamentLdaWrapper::Helpers::DateHelper do
-  let(:research_briefings_request){ ParliamentLdaWrapper::Request.new('researchbriefings').get({ 'min-date': '2017-01-01', 'max-date': '2017-03-20' }) }
+RSpec.describe ParliamentLdaClient::Helpers::DateHelper do
+  let(:research_briefings_request){ ParliamentLdaClient::Request.new('researchbriefings').get({ 'min-date': '2017-01-01', 'max-date': '2017-03-20' }) }
   let(:items){ research_briefings_request['result']['items'] }
 
   context '#strip_date' do

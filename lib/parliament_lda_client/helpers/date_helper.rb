@@ -1,6 +1,6 @@
 require 'date'
 
-module ParliamentLdaWrapper
+module ParliamentLdaClient
   module Helpers
    module DateHelper
      def self.strip_date(item)

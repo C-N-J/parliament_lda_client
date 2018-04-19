@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "parliament_lda_wrapper"
+require "parliament_lda_client"
 require 'webmock/rspec'
 require_relative 'support/vcr_config'
 

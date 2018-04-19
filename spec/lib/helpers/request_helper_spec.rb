@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ParliamentLdaWrapper::Helpers::RequestHelper do
+RSpec.describe ParliamentLdaClient::Helpers::RequestHelper do
   context '#full_uri' do
     context 'valid request' do
       it 'will return a correctly generated URI' do

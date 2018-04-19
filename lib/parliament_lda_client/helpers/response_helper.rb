@@ -1,7 +1,7 @@
 require_relative 'date_helper'
 require 'json'
 
-module ParliamentLdaWrapper
+module ParliamentLdaClient
   module Helpers
     module ResponseHelper
       class << self

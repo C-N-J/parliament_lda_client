@@ -1,6 +1,6 @@
 require_relative '../request'
 
-module ParliamentLdaWrapper
+module ParliamentLdaClient
   module Helpers
     module RequestHelper
       class << self
